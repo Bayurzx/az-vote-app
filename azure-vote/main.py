@@ -1,3 +1,4 @@
+import logging
 from flask import Flask, request, render_template
 import os
 import random
@@ -6,6 +7,18 @@ import socket
 import sys
 
 app = Flask(__name__)
+
+extra = {'app_name': 'Voting App'}
+
+logger = logging.getLogger(__name__)
+syslog = logging.StreamHandler()
+formatter = logging.Formatter('%(asctime)s %(app_name)s : %(message)s')
+syslog.setFormatter(formatter)
+logger.setLevel(logging.INFO)
+logger.addHandler(syslog)
+
+logger = logging.LoggerAdapter(logger, extra)
+
 
 # Load configurations from environment or config file
 app.config.from_pyfile('config_file.cfg')
