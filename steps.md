@@ -223,6 +223,7 @@ kubectl delete hpa azure-vote-front
 # Exercise: Collecting Telemetry Data for an application deployed on AKS cluster
 
 *Prerequisite*
+- You should switch to `AppInsight` branch with `git switch AppInsight`
 - You should have an Application Insights instance already created in your account
 - You should have an application already deployed on the AKS cluster
 
