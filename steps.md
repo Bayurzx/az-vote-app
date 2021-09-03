@@ -423,7 +423,7 @@ Reference:
 ## Step 4 - Redeploy the app to the VMSS
 - If your VMSS is still there, you can try deploying the application manually to at least one of the VMSS instances.
 - Remember that the Redis configuration is different in the case of VMSS versus AKS deployment. For VMSS, you will use r = redis.Redis(). Also, note that the driver function will vary slightly:
-``` 
+``` py
 if __name__ == "__main__":
   # For running the application locally 
   # app.run() # local
